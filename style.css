@@ -1,0 +1,33 @@
+body{
+    background: #111;
+    color:azure;
+    text-align:center;
+    font-family: Arial, sans-serif;
+    ;
+}
+
+#game-container {
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: relative;
+
+}
+
+.torch {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.on {
+  background: orange;
+  box-shadow: 0 0 20px orange;
+}
+
+.off {
+  background: #333;
+}
