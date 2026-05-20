@@ -1,10 +1,3 @@
-/*
-ESTRUTURA FINAL:
-- index.html
-- style.css
-- script.js
-*/
-
 // Iniciando com as Tochas
 let torches = [true, true, true, true, true, true, true]; // Todas as tochas estão acesas inicialmente
 
@@ -19,6 +12,15 @@ function renderTorches() {
 
   torches.forEach((torch, index) => {
     const torchElement = document.createElement("div");
+    const flame = document.createElement("div");
+    const handle = document.createElement("div");
+
+    flame.classList.add("flame");
+    handle.classList.add("handle");
+
+    torchElement.appendChild(flame);
+    torchElement.appendChild(handle);
+
     torchElement.classList.add("torch");
     torchElement.classList.add(torch ? "on" : "off"); // Adiciona a classe "on" ou "off" dependendo do estado da tocha
 
@@ -28,7 +30,7 @@ function renderTorches() {
     const y = 250 + 160 * Math.sin(angle); // Calcula a posição y usando trigonometria
     
     torchElement.style.left = `${x - 30}px`;
-    torchElement.style.top = `${y - 30}px`;
+    torchElement.style.top = `${y - 45}px`;
 
     torchElement.addEventListener("click", () => {
       toggleTorch(index); // Alterna o estado da tocha ao clicar
