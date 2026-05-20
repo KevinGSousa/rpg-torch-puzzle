@@ -1,6 +1,3 @@
-// Projeto base será montado aqui passo a passo durante a mentoria.
-// Usaremos HTML/CSS/JS puro, mas vou manter no canvas para organizar os arquivos e lógica.
-
 /*
 ESTRUTURA FINAL:
 - index.html
@@ -13,6 +10,7 @@ let torches = [true, true, true, true, true, true, true]; // Todas as tochas est
 
 const gameContainer = document.getElementById("game-container");
 const message = document.getElementById("message");
+const resetButton = document.getElementById("reset-button");
 
 // Função para renderizar as tochas na tela
 // Ela será basicamente aimpressora visual do jogo.
@@ -57,11 +55,19 @@ function toggleTorch(index){
 function checkVictory() {
   const allOff = torches.every(torch => torch === false); // Verifica se todas as tochas estão apagadas
   if(allOff){
-    message.textContent = "Parabéns! Você resolveu o Puzzle!";
+    message.textContent = "As chamas cessam. O caminho se abre.";
+    gameContainer.classList.add("victory"); // Adiciona uma classe de vitória para efeitos visuais
   } else {
     message.textContent = "";
   }
+}
 
+function resetGame(){
+  torches = [true, true, true, true, true, true, true]; // Reseta todas as tochas para acesas
+  renderTorches(); // Renderiza as tochas novamente
+  message.textContent = ""; // Limpa a mensagem de vitória
+  gameContainer.classList.remove("victory"); // Remove a classe de vitória
 }
 
 renderTorches(); // Renderiza as tochas inicialmente
+resetButton.addEventListener("click", resetGame);
