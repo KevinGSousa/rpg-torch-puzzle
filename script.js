@@ -14,12 +14,15 @@ function renderTorches() {
     const torchElement = document.createElement("div");
     const flame = document.createElement("div");
     const handle = document.createElement("div");
+    const pedestal = document.createElement("div");
 
     flame.classList.add("flame");
     handle.classList.add("handle");
+    pedestal.classList.add("pedestal");
 
     torchElement.appendChild(flame);
     torchElement.appendChild(handle);
+    torchElement.appendChild(pedestal);
 
     torchElement.classList.add("torch");
     torchElement.classList.add(torch ? "on" : "off"); // Adiciona a classe "on" ou "off" dependendo do estado da tocha
