@@ -16,23 +16,26 @@ body{
 }
 
 #game-container {
-    width: 500px;
-    height: 500px;
-    margin: 50px auto;
-    border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+  border-radius: 50%;
   position: relative;
-  border: 8px solid #3a3a3a;
+  border: 8px solid #31313134;
   box-shadow:
     0 0 20px rgba(0, 174, 255, 0.205),
     inset 0 0 20px rgba(255,255,255,0.05);
-  background:
-  radial-gradient(circle, #111 60%, #1b1b1b 100%);
 
-  background-image:
-  linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-  url("./assets/images/Circle_Off.png");
-  background-size: cover;
+  /* Juntamos o gradiente e a imagem em uma única declaração limpa */
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("./assets/images/Circle_Off.png");
+  
+  /* Força ambos (gradiente e imagem) a cobrirem o container e ficarem centralizados */
+
+  background-size: 112%;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* #circle {
@@ -185,7 +188,8 @@ body{
 
 #game-container.victory {
   background-image:
-  linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-  url("./assets/images/Circle_On.png");
-
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("./assets/images/Circle_On.png");
+  background-size: 110%;
+  background-position: center;
 }
